@@ -4,8 +4,6 @@ WORKDIR /app
 
 # Copy dependency descriptors first for caching
 COPY pom.xml ./
-COPY .mvn ./.mvn
-COPY mvnw ./
 RUN mvn dependency:go-offline -B || true
 
 # Copy source code and build production package
